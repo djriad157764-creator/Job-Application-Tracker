@@ -50,12 +50,17 @@ function toggleStyle(id) {
   // reset all btn style
 
   [allFilterBtn, interviewFilterBtn, rejectedFilterBtn].forEach((btn) => {
+
     btn.classList.remove("active-btn", "inactive-btn");
+
+    // true : add classList / false : remove classList
 
     if (btn.id === id) {
       btn.classList.add("active-btn");
+      btn.classList.remove("inactive-btn");
     } else {
       btn.classList.add("inactive-btn");
+      btn.classList.remove("active-btn");
     }
   });
 
