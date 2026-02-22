@@ -34,19 +34,19 @@
 <!-- counter section  -->
 
 <div class="">
-    <h1 class="md:text-[32px] text-[24px] text-[#43c74e] font-bold mb-5">Job Application Tracker</h1>
+    <h1 class="md:text-[32px] text-[24px] text-[#22c55e] font-bold mb-5">Job Application Tracker</h1>
     <div class="grid grid-cols-3 gap-4">
-        <div class="text-white p-5 bg-[#070f2575] rounded-3xl md:text-start text-center">
-        <p class="font-medium mb-2">Total</p>
-        <p id="total-count" class="font-bold text-[24px]"><span>0</span></p>
+        <div class="p-5 bg-[#070f2575] rounded-3xl md:text-start text-center">
+        <p class="font-medium mb-2 text-[#f97316]">Total</p>
+        <p class="font-bold text-[24px] text-[#fbbf24]"><span class="total-count">0</span></p>
     </div>
-    <div class="text-green-700 p-5 bg-[#070f2575] rounded-3xl md:text-start text-center">
-        <p class="font-medium mb-2">Interview</p>
-        <p id="interview-count" class="font-bold text-[24px]"><span>0</span></p>
+    <div class=" p-5 bg-[#070f2575] rounded-3xl md:text-start text-center">
+        <p class="font-medium mb-2 text-[#4ade80]">Interview</p>
+        <p id="interview-count" class="font-bold text-[24px] text-[#86efac]"><span>0</span></p>
     </div>
-    <div class="text-red-700 p-5 bg-[#070f2575] rounded-3xl md:text-start text-center">
-        <p class="font-medium mb-2">Rejected</p>
-        <p id="rejected-count" class="font-bold text-[24px]"><span>0</span></p>
+    <div class="p-5 bg-[#070f2575] rounded-3xl md:text-start text-center">
+        <p class="font-medium mb-2 text-[#f87171]">Rejected</p>
+        <p id="rejected-count" class="text-[#fca5a5] font-bold text-[24px]"><span>0</span></p>
     </div>
     </div>
 </div>
@@ -55,7 +55,8 @@
 
         <!-- btn div  -->
 
-      <div class="mb-10  grid grid-cols-3 gap-4 md:w-[600px]">
+<div class="flex justify-between items-center">
+          <div class="mb-10  grid grid-cols-3 gap-4 md:w-[600px]">
   <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" 
     class=" px-8 py-3 rounded-2xl backdrop-blur-lg bg-blue-600/40 text-white border border-blue-400/50 shadow-lg transition-all font-bold">
     All
@@ -69,143 +70,215 @@
     Rejected
   </button>
 </div>
+    <div class="text-center items-center  bg-[#1e1b4b] text-[#c4b5fd] p-5 rounded-2xl ">
+<p class=""><span class="total-count">0</span> Jobs</p>
+    </div>
+</div>
 
 <!-- card section  -->
 
 <section class="space-y-5">
 
+<!-- card 1 TechCorp Solutions -->
+
     <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
         <div class="flex justify-between items-center">
             <div class="">
-<h2 id="company-name" class="text-[18px] font-semibold text-[#3584d8] mb-2">TechCorp Solutions</h2>
-<p class="text-base text-[#7285a0] mb-5">Frontend Develope</p>
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">TechCorp Solutions</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">Frontend Develope</p>
             </div>
             <div class="">
 <button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
             </div>
         </div>
-        <div class="text-gray-400 mb-5">Remote
-Full-time
-Salary: $80k - $100k</div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location">Remote</span>
+<span class="Type">Full-time</span>
+ <span class="Salary">$80k - $100k</span></div>
         <div class="mb-5">
-            <p class="text-white font-bold text-base bg-[#323B49] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
-            <p class="text-[#323B49]">Build responsive web applications using React and modern CSS frameworks.</p>
+            <p class=" font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#64748b]">Build responsive web applications using React and modern CSS frameworks.</p>
         </div>
         <div class="flex gap-2">
-            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-600/40 text-green-600/40 border border-green-700/50 hover:bg-green-600/30 transition-all font-bold">interview</button>
-            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-600/30 text-red-800 border border-red-700/50 hover:bg-red-600/20 transition-all font-bold">Rejected</button>
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
         </div>
     </div>
+
+    <!-- card 2 -->
+
     <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
         <div class="flex justify-between items-center">
             <div class="">
-<h2 id="company-name" class="text-[18px] font-semibold text-[#3584d8] mb-2">TechCorp Solutions</h2>
-<p class="text-base text-[#7285a0] mb-5">Frontend Develope</p>
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">InnoVatech</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">UX/UI Designer</p>
             </div>
             <div class="">
 <button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
             </div>
         </div>
-        <div class="text-gray-400 mb-5">Remote
-Full-time
-Salary: $80k - $100k</div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location"> New York, NY</span>
+<span class="Type">Hybrid</span>
+ <span class="Salary">$70k - $90k</span></div>
         <div class="mb-5">
-            <p class="text-white font-bold text-base bg-[#323B49] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
-            <p class="text-[#323B49]">Build responsive web applications using React and modern CSS frameworks.</p>
+            <p class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#323B49]">Design user-centered interfaces for mobile and web platforms.</p>
         </div>
         <div class="flex gap-2">
-            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-600/40 text-green-600/40 border border-green-700/50 hover:bg-green-600/30 transition-all font-bold">interview</button>
-            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-600/30 text-red-800 border border-red-700/50 hover:bg-red-600/20 transition-all font-bold">Rejected</button>
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
         </div>
     </div>
+
+<!-- card 3 -->
+
     <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
         <div class="flex justify-between items-center">
             <div class="">
-<h2 id="company-name" class="text-[18px] font-semibold text-[#3584d8] mb-2">TechCorp Solutions</h2>
-<p class="text-base text-[#7285a0] mb-5">Frontend Develope</p>
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">CloudShift Inc.</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">DevOps Engineer</p>
             </div>
             <div class="">
 <button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
             </div>
         </div>
-        <div class="text-gray-400 mb-5">Remote
-Full-time
-Salary: $80k - $100k</div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location">Austin, TX</span>
+<span class="Type">Full-time</span>
+ <span class="Salary">$95k - $120k</span></div>
         <div class="mb-5">
-            <p class="text-white font-bold text-base bg-[#323B49] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
-            <p class="text-[#323B49]">Build responsive web applications using React and modern CSS frameworks.</p>
+            <p class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#323B49]">Manage CI/CD pipelines, cloud infrastructure, and automation.</p>
         </div>
         <div class="flex gap-2">
-            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-600/40 text-green-600/40 border border-green-700/50 hover:bg-green-600/30 transition-all font-bold">interview</button>
-            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-600/30 text-red-800 border border-red-700/50 hover:bg-red-600/20 transition-all font-bold">Rejected</button>
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
         </div>
     </div>
+
+<!-- card 4 -->
+
     <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
         <div class="flex justify-between items-center">
             <div class="">
-<h2 id="company-name" class="text-[18px] font-semibold text-[#3584d8] mb-2">TechCorp Solutions</h2>
-<p class="text-base text-[#7285a0] mb-5">Frontend Develope</p>
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">FinEdge</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">Backend Developer</p>
             </div>
             <div class="">
 <button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
             </div>
         </div>
-        <div class="text-gray-400 mb-5">Remote
-Full-time
-Salary: $80k - $100k</div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location">Remote</span>
+<span class="Type">Full-time</span>
+ <span class="Salary">$85k - $110k</span></div>
         <div class="mb-5">
-            <p class="text-white font-bold text-base bg-[#323B49] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
-            <p class="text-[#323B49]">Build responsive web applications using React and modern CSS frameworks.</p>
+            <p class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#323B49]">Develop scalable APIs and microservices with Node.js and Python.</p>
         </div>
         <div class="flex gap-2">
-            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-600/40 text-green-600/40 border border-green-700/50 hover:bg-green-600/30 transition-all font-bold">interview</button>
-            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-600/30 text-red-800 border border-red-700/50 hover:bg-red-600/20 transition-all font-bold">Rejected</button>
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
         </div>
     </div>
+
+<!-- card 5 -->
+
     <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
         <div class="flex justify-between items-center">
             <div class="">
-<h2 id="company-name" class="text-[18px] font-semibold text-[#3584d8] mb-2">TechCorp Solutions</h2>
-<p class="text-base text-[#7285a0] mb-5">Frontend Develope</p>
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">GreenLeaf Energy</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">Data Analyst</p>
             </div>
             <div class="">
 <button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
             </div>
         </div>
-        <div class="text-gray-400 mb-5">Remote
-Full-time
-Salary: $80k - $100k</div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location">Denver, CO</span>
+<span class="Type">On-site</span>
+ <span class="Salary">$65k - $80k</span></div>
         <div class="mb-5">
-            <p class="text-white font-bold text-base bg-[#323B49] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
-            <p class="text-[#323B49]">Build responsive web applications using React and modern CSS frameworks.</p>
+            <p class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#323B49]">Analyze energy consumption data and create visual reports.</p>
         </div>
         <div class="flex gap-2">
-            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-600/40 text-green-600/40 border border-green-700/50 hover:bg-green-600/30 transition-all font-bold">interview</button>
-            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-600/30 text-red-800 border border-red-700/50 hover:bg-red-600/20 transition-all font-bold">Rejected</button>
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
         </div>
     </div>
+
+<!-- card 6 -->
+
     <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
         <div class="flex justify-between items-center">
             <div class="">
-<h2 id="company-name" class="text-[18px] font-semibold text-[#3584d8] mb-2">TechCorp Solutions</h2>
-<p class="text-base text-[#7285a0] mb-5">Frontend Develope</p>
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">MediCore Health</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">Product Manager</p>
             </div>
             <div class="">
 <button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
             </div>
         </div>
-        <div class="text-gray-400 mb-5">Remote
-Full-time
-Salary: $80k - $100k</div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location">Boston, MA</span>
+<span class="Type">Hybrid</span>
+ <span class="Salary">$100k - $130k</span></div>
         <div class="mb-5">
-            <p class="text-white font-bold text-base bg-[#323B49] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
-            <p class="text-[#323B49]">Build responsive web applications using React and modern CSS frameworks.</p>
+            <p class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#323B49]">Lead product development for healthcare software solutions.</p>
         </div>
         <div class="flex gap-2">
-            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-600/40 text-green-600/40 border border-green-700/50 hover:bg-green-600/30 transition-all font-bold">interview</button>
-            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-600/30 text-red-800 border border-red-700/50 hover:bg-red-600/20 transition-all font-bold">Rejected</button>
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
         </div>
     </div>
+
+<!-- card 7 -->
+
+    <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
+        <div class="flex justify-between items-center">
+            <div class="">
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">SkillBridge Academy</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">Content Writer</p>
+            </div>
+            <div class="">
+<button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
+            </div>
+        </div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location">Remote</span>
+<span class="Type">Part-time</span>
+ <span class="Salary">$40k - $50k</span></div>
+        <div class="mb-5">
+            <p class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#323B49]">Create educational content and blog posts for online learners.</p>
+        </div>
+        <div class="flex gap-2">
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
+        </div>
+    </div>
+
+<!-- card 8 -->
+
+    <div class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101">
+        <div class="flex justify-between items-center">
+            <div class="">
+<h2 id="company-name" class="text-[18px] font-semibold text-[#38bdf8] mb-2">Starlight Games</h2>
+<p id="Position" class="text-base text-[#94a3b8] mb-5">Game Tester</p>
+            </div>
+            <div class="">
+<button id="card-delete-btn" class="text-[32px] hover:scale-120 duration-400 transition-all text-red-600 "><i class="fa-solid fa-trash-arrow-up"></i></button>
+            </div>
+        </div>
+        <div class="text-[#cbd5e1] mb-5"><span class="Location">Los Angeles, CA</span>
+<span class="Type">Contract</span>
+ <span class="Salary">$45k - $55k</span></div>
+        <div class="mb-5">
+            <p class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"><span id="status">Not Applied</span></p>
+            <p class="text-[#323B49]">Test gameplay mechanics, report bugs, and ensure quality.</p>
+        </div>
+        <div class="flex gap-2">
+            <button id="interview-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold">interview</button>
+            <button id="rejected-btn" class="px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold">Rejected</button>
+        </div>
+    </div>
+
 
 </section>
 
