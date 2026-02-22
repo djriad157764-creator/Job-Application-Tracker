@@ -32,7 +32,7 @@
         font-family: "Geist", sans-serif;
       }
       .active-btn {
-        padding: 12px 24px;
+        padding: 12px 16px;
         border-radius: 16px;
         backdrop-filter: blur(16px);
         background-color: rgba(37, 99, 235, 0.4);
@@ -43,12 +43,12 @@
           0 4px 6px -2px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(96, 165, 250, 0.5);
         cursor: pointer;
+        width: 100%;
         outline: none;
       }
 
       .active-btn:hover {
         background-color: rgba(37, 99, 235, 0.6);
-        
       }
       .inactive-btn {
         padding: 8px 16px;
@@ -59,6 +59,7 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(16px);
         transition: all 0.2s ease-in-out;
+        width: 100%;
         cursor: pointer;
       }
 
@@ -106,8 +107,8 @@
     <main>
       <!-- btn div  -->
 
-      <div class="md:flex md:justify-between md:items-center">
-        <div class="mb-10 grid grid-cols-3 gap-2 md:gap-4 md:w-full px-3">
+      <div class=" md:flex md:justify-between items-center">
+        <div class="mb-10 pt-4 grid grid-cols-3 gap-2 md:gap-4 md:w-full px-3">
           <button
             onclick="toggleStyle('all-filter-btn')"
             id="all-filter-btn"
@@ -118,24 +119,26 @@
           <button
             onclick="toggleStyle('interview-filter-btn')"
             id="interview-filter-btn"
-            class="md:px-8 md:py-3 rounded-2xl backdrop-blur-lg bg-white/5 text-white/40 border border-white/10 hover:bg-white/10 font-bold"
+            class="px-4 md:px-8 py-3 rounded-2xl backdrop-blur-lg bg-white/5 text-white/40 border border-white/10 hover:bg-white/10 font-bold"
           >
             Interview
           </button>
           <button
             onclick="toggleStyle('rejected-filter-btn')"
             id="rejected-filter-btn"
-            class="md:px-8 md:py-3 rounded-2xl backdrop-blur-lg bg-white/5 text-white/40 border border-white/10 hover:bg-white/10 transition-all font-bold"
+            class="px-4 md:px-8 py-3 rounded-2xl backdrop-blur-lg bg-white/5 text-white/40 border border-white/10 hover:bg-white/10 transition-all font-bold"
           >
             Rejected
           </button>
         </div>
         <div
-          class="text-center justify-center flex bg-[#1e1b4b] text-[#c4b5fd] p-4 rounded-2xl mb-5"
+          class="text-center justify-center items-center flex bg-[#1e1b4b] text-[#c4b5fd] p-4 rounded-2xl mb-5"
         >
           <div class="">
-            <div id="interview-show" class="mr-1 hidden">
-              <p class="flex gap-1"><span id="interview-count-of">0</span> of</p>
+            <div id="interview-show" class="mr-1 hidde">
+              <p class="flex gap-1">
+                <span id="interview-count-of">0</span> of
+              </p>
             </div>
             <div id="rejected-show" class="mr-1 hidden">
               <p class="flex gap-1"><span id="rejected-count-of">0</span> of</p>

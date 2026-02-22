@@ -50,7 +50,6 @@ function toggleStyle(id) {
   // reset all btn style
 
   [allFilterBtn, interviewFilterBtn, rejectedFilterBtn].forEach((btn) => {
-
     btn.classList.remove("active-btn", "inactive-btn");
 
     // true : add classList / false : remove classList
