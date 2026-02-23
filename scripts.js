@@ -1,5 +1,3 @@
-console.log("scripts connected");
-
 // store
 
 let interviewList = [];
@@ -96,41 +94,104 @@ function toggleStyle(id) {
 // main section event delegation
 
 mainContainer.addEventListener("click", function (event) {
-  const target = event.target;
-
-  // check btn if false return
-
-  if (
-    !target.classList.contains("interview-btn") &&
-    !target.classList.contains("rejected-btn")
-  ) {
-    return;
-  }
-
-  // check card if false return
-
-  const card = target.closest(".card");
-  if (!card) {
-    return;
-  }
-
-  // select companyName and status in card
-
-  const companyName = card.querySelector(".company-name").innerText;
-  let position = card.querySelector(".Position").innerText;
-  let statusEi = card.querySelector(".status").innerText;
-  let location = card.querySelector(".Location").innerText;
-  let type = card.querySelector(".Type").innerText;
-  let salary = card.querySelector(".Salary").innerText;
-  let description = card.querySelector(".description").innerText;
-
-console.log(companyName, position, statusEi, location, type, salary, description);
-
-  if (target.classList.contains("interview-btn")) {
-    statusEi = "Interview";
-  }
-  if (target.classList.contains("rejected-btn")) {
-    statusEi = "Rejected";
-  }
   
+
+  if (event.target.classList.contains("interview-btn")) {
+
+    let card =event.target.closest(".card");
+
+    // select more information in card
+
+    const companyName = card.querySelector(".company-name").innerText;
+    let position = card.querySelector(".Position").innerText;
+    let status = card.querySelector(".status");
+    let location = card.querySelector(".Location").innerText;
+    let type = card.querySelector(".Type").innerText;
+    let salary = card.querySelector(".Salary").innerText;
+    let description = card.querySelector(".description").innerText;
+
+    // create an Object
+
+    const cardInfo = {
+      companyName,
+      position,
+      status,
+      location,
+      type,
+      salary,
+      description,
+    };
+
+    // change status
+
+    let interListExisting = interviewList.find(
+      (item) => item.companyName === cardInfo.companyName,
+    );
+    if (!interListExisting) {
+      interviewList.push(cardInfo);
+    }
+  }
+
+  renderInterview();
 });
+
+function renderInterview() {
+  emptyDiv = "";
+
+  for (let interList of interviewList) {
+    const newDiv = document.createElement("div");
+    
+    newDiv.innerHTML = ` <div
+          class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101"
+        >
+          <div class="flex justify-between items-center">
+            <div class="">
+              <h2
+                class="company-name text-[18px] font-semibold text-[#38bdf8] mb-2"
+              >
+                ${companyName}
+              </h2>
+              <p class="Position text-base text-[#94a3b8] mb-5">
+                Frontend Develope
+              </p>
+            </div>
+            <div class="">
+              <button
+                
+                class="card-delete-btn cursor-pointer text-[32px] hover:scale-120 duration-400 transition-all text-red-600"
+              >
+                <i class="fa-solid fa-trash-arrow-up"></i>
+              </button>
+            </div>
+          </div>
+          <div class="text-[#cbd5e1] mb-5">
+            <span class="Location">${location}</span>
+            <span class="Type">${type}</span>
+            <span class="Salary">${salary}</span>
+          </div>
+          <div class="mb-5">
+            <p
+              class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"
+            >
+              <span class="status">${status}</span>
+            </p>
+            <p class="description text-[#64748b]">
+              ${description}
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button
+              class="interview-btn cursor-pointer px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold"
+            >
+              Interview
+            </button>
+            <button
+              class="rejected-btn cursor-pointer px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold"
+            >
+              Rejected
+            </button>
+          </div>
+        </div>`;
+  }
+  emptyDiv.appendChild(newDiv);
+}
