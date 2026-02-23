@@ -189,6 +189,7 @@ mainContainer.addEventListener("click", function (event) {
         (i) => i.companyName !== cardInfo.companyName,
       );
     }
+
     card.querySelector(".status").innerText = "Rejected";
     calculateCount(); // count update
 
