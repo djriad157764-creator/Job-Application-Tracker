@@ -2,6 +2,7 @@
 
 let interviewList = [];
 let rejectedList = [];
+let btnDeleteCardList = [];
 let currentStatus = "all-filter-btn";
 
 // select counter section with Dom in javaScript
@@ -13,7 +14,7 @@ const interViewCountOf = document.getElementById("interview-count-of");
 const rejectedViewCount = document.getElementById("rejected-count");
 const rejectedViewCountOf = document.getElementById("rejected-count-of");
 
-// select filter btn section
+// select filter btn from btn div
 
 const allFilterBtn = document.getElementById("all-filter-btn");
 const interviewFilterBtn = document.getElementById("interview-filter-btn");
@@ -51,7 +52,7 @@ function toggleStyle(id) {
   [allFilterBtn, interviewFilterBtn, rejectedFilterBtn].forEach((btn) => {
     btn.classList.remove("active-btn", "inactive-btn");
 
-// check btn 
+    // check btn
 
     if (btn.id === id) {
       btn.classList.add("active-btn"); //add style class
@@ -100,6 +101,34 @@ function extractCardData(card, statusValue) {
 // main section event delegation
 
 mainContainer.addEventListener("click", function (event) {
+  //  when anyone click card-delete-btn work this condition and remove card from UI
+
+  let deleteBtn = event.target.closest(".card-delete-btn");
+
+  // case data for delete btn
+
+  if (deleteBtn) {
+    const card = event.target.closest(".card");
+    const companyName = card.querySelector(".company-name").innerText;
+
+    // remove item from array
+
+    interviewList = interviewList.filter((i) => i.companyName !== companyName);
+    rejectedList = rejectedList.filter((i) => i.companyName !== companyName);
+
+    let cardDelete = allCardSection.querySelectorAll(".card");
+    cardDelete.forEach((d) => {
+      if (d.querySelector(".company-name") === companyName) {
+        d.remove();
+      }
+    });
+
+    card.remove();  //remove card from UI
+    calculateCount();  //count update
+  }
+
+  // when anyone click interview btn work this condition
+
   if (event.target.classList.contains("interview-btn")) {
     let card = event.target.closest(".card");
 
@@ -116,7 +145,7 @@ mainContainer.addEventListener("click", function (event) {
       );
     }
 
-    card.querySelector(".status").innerText = "Interview";  //set this.innerText status in card 
+    card.querySelector(".status").innerText = "Interview"; //set this.innerText status in card
 
     calculateCount(); // count update
 
@@ -126,6 +155,8 @@ mainContainer.addEventListener("click", function (event) {
       renderCards(interviewList); //call renderCards
     }
   }
+
+  // when anyone click rejected btn work this condition
 
   if (event.target.classList.contains("rejected-btn")) {
     let card = event.target.closest(".card");
@@ -151,7 +182,7 @@ mainContainer.addEventListener("click", function (event) {
       renderCards(interviewList); //call renderCards
     } else if (currentStatus === "rejected-filter-btn") {
       renderCards(rejectedList); //call renderCards
-    } 
+    }
   }
 });
 
@@ -169,7 +200,7 @@ function renderCards(list) {
     emptyDiv.classList.add("hidden");
     showCard.classList.remove("hidden");
 
-// loop in the list
+    // loop in the list
 
     list.forEach((item) => {
       const newDiv = document.createElement("div"); // create new div
@@ -187,7 +218,7 @@ function renderCards(list) {
                 ${item.companyName}
               </h2>
               <p class="Position text-base text-[#94a3b8] mb-5">
-                Frontend Develope
+                ${item.position}
               </p>
             </div>
             <div class="">
