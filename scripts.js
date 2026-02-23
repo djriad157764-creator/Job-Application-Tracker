@@ -88,12 +88,12 @@ function toggleStyle(id) {
 
 function extractCardData(card, statusValue) {
   return {
-    companyName: card.querySelector(".company-name").innerText,
-    position: card.querySelector(".Position").innerText,
-    location: card.querySelector(".Location").innerText,
-    type: card.querySelector(".Type").innerText,
-    salary: card.querySelector(".Salary").innerText,
-    description: card.querySelector(".description").innerText,
+    companyName: card.querySelector(".company-name").innerText.trim(),
+    position: card.querySelector(".Position").innerText.trim(),
+    location: card.querySelector(".Location").innerText.trim(),
+    type: card.querySelector(".Type").innerText.trim(),
+    salary: card.querySelector(".Salary").innerText.trim(),
+    description: card.querySelector(".description").innerText.trim(),
     status: statusValue,
   };
 }
@@ -113,18 +113,34 @@ mainContainer.addEventListener("click", function (event) {
 
     // remove item from array
 
-    interviewList = interviewList.filter((i) => i.companyName !== companyName);
-    rejectedList = rejectedList.filter((i) => i.companyName !== companyName);
+    interviewList = interviewList.filter(
+      (i) => i.companyName.trim() !== companyName,
+    );
+    rejectedList = rejectedList.filter(
+      (i) => i.companyName.trim() !== companyName,
+    );
 
     let cardDelete = allCardSection.querySelectorAll(".card");
     cardDelete.forEach((d) => {
-      if (d.querySelector(".company-name") === companyName) {
+      if (d.querySelector(".company-name").innerText.trim() === companyName) {
         d.remove();
       }
     });
 
-    card.remove();  //remove card from UI
-    calculateCount();  //count update
+    card.remove(); //remove card from UI
+    calculateCount(); //count update
+
+    if (currentStatus === "interview-filter-btn") {
+      renderCards(interviewList);
+    } else if (currentStatus === "rejected-filter-btn") {
+      renderCards(rejectedList);
+    } else if (currentStatus === "all-filter-btn") {
+      if (allCardSection.children.length === 0) {
+        emptyDiv.classList.remove("hidden");
+        allCardSection.classList.add("hidden");
+      }
+    }
+    return;
   }
 
   // when anyone click interview btn work this condition
