@@ -92,3 +92,45 @@ function toggleStyle(id) {
     }
   }
 }
+
+// main section event delegation
+
+mainContainer.addEventListener("click", function (event) {
+  const target = event.target;
+
+  // check btn if false return
+
+  if (
+    !target.classList.contains("interview-btn") &&
+    !target.classList.contains("rejected-btn")
+  ) {
+    return;
+  }
+
+  // check card if false return
+
+  const card = target.closest(".card");
+  if (!card) {
+    return;
+  }
+
+  // select companyName and status in card
+
+  const companyName = card.querySelector(".company-name").innerText;
+  let position = card.querySelector(".Position").innerText;
+  let statusEi = card.querySelector(".status").innerText;
+  let location = card.querySelector(".Location").innerText;
+  let type = card.querySelector(".Type").innerText;
+  let salary = card.querySelector(".Salary").innerText;
+  let description = card.querySelector(".description").innerText;
+
+console.log(companyName, position, statusEi, location, type, salary, description);
+
+  if (target.classList.contains("interview-btn")) {
+    statusEi = "Interview";
+  }
+  if (target.classList.contains("rejected-btn")) {
+    statusEi = "Rejected";
+  }
+  
+});
