@@ -161,7 +161,9 @@ mainContainer.addEventListener("click", function (event) {
       );
     }
 
-    card.querySelector(".status").innerText = "Interview"; //set this.innerText status in card
+    card.querySelector(".status").innerText = "Interview" //set this.innerText status in card
+    card.querySelector(".status").className =
+      "status px-3 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[10px] font-bold uppercase tracking-[2px] text-emerald-400";
 
     calculateCount(); // count update
 
@@ -191,6 +193,8 @@ mainContainer.addEventListener("click", function (event) {
     }
 
     card.querySelector(".status").innerText = "Rejected";
+    card.querySelector(".status").className =
+      "status px-3 py-2 rounded-full bg-rose-500/20 border border-rose-500/40 text-[10px] font-bold uppercase tracking-[2px] text-rose-400";
     calculateCount(); // count update
 
     // check condition and then call renderCards function
@@ -222,19 +226,28 @@ function renderCards(list) {
     list.forEach((item) => {
       const newDiv = document.createElement("div"); // create new div
 
+ if (item.status === "Interview") {
+   statusClass =
+     "bg-emerald-500/20 border border-emerald-500/40 text-emerald-400";
+ } else if (item.status === "Rejected") {
+   statusClass = "bg-rose-500/20 border border-rose-500/40 text-rose-400";
+ } else {
+   statusClass = "bg-white/5 border border-white/10 text-white/40";
+ }
+
       // set innerHTML in newDiv
 
       newDiv.innerHTML = ` <div
-          class="card bg-white/3 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl hover:scale-101"
+          class="card backdrop-blur-3xl bg-white/2   hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl my-5"
         >
           <div class="flex justify-between items-center">
             <div class="">
               <h2
-                class="company-name text-[18px] font-semibold text-[#38bdf8] mb-2"
+                class="company-name text-[20px] font-semibold text-[#38bdf8] mb-2 "
               >
                 ${item.companyName}
               </h2>
-              <p class="Position text-base text-[#94a3b8] mb-5">
+              <p class="Position text-base text-[#94a3b8] mb-5 italic">
                 ${item.position}
               </p>
             </div>
@@ -243,7 +256,7 @@ function renderCards(list) {
                 
                 class="card-delete-btn cursor-pointer text-[32px] hover:scale-120 duration-400 transition-all text-red-600"
               >
-                <i class="fa-solid fa-trash-arrow-up"></i>
+                🗑️
               </button>
             </div>
           </div>
@@ -253,12 +266,10 @@ function renderCards(list) {
             <span class="Salary">${item.salary}</span>
           </div>
           <div class="mb-5">
-            <p
-              class="font-bold text-base bg-[#2d3748] text-[#94a3b8] w-fit p-2 mb-2 rounded-[8px]"
-            >
-              <span class="status">${item.status}</span>
-            </p>
-            <p class="description text-[#64748b]">
+            <span class="status px-3 py-2 rounded-full text-[10px] font-bold uppercase tracking-[2px] ${statusClass}">
+              ${item.status === "Interview" ? "✅ Interview" : item.status === "Rejected" ? "❌ Rejected" : "📌 " + item.status}
+            </span>
+            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
               ${item.description}
             </p>
           </div>

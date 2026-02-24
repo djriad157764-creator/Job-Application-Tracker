@@ -15,7 +15,7 @@ Insert: তৈরি করা নতুন এলিমেন্টটিকে
 
 যখন কোনো একটি Button-এ ক্লিক করা হয়, তখন প্রথমে একটি Event ঘটে। এরপর ইভেন্টটি তার Parent এলিমেন্টে যায়, তারপর তার উপরের Parent-এ যায়। এভাবে পর্যায়ক্রমে Body থেকে শুরু করে Document পর্যন্ত পৌঁছে যায়। অর্থাৎ যেখানে ক্লিক করা হয় সেখান থেকে উপরের দিকে ইভেন্টটি ছড়িয়ে পড়াকেই Event Bubbling বলা হয়।
 
-### 4. What is Event Delegation in JavaScript? Why is it useful?
+### 4. What is Event Delegation in JavaScript? Why is it useful?z
 
 যখন কোনো একটি Button-এ ক্লিক করা হয়, তখন প্রথমে একটি Event ঘটে। এরপর ইভেন্টটি তার Parent এলিমেন্টে যায়, তারপর তার উপরের Parent-এ যায়। এভাবে পর্যায়ক্রমে Body থেকে শুরু করে Document পর্যন্ত পৌঁছে যায়। অর্থাৎ যেখানে ক্লিক করা হয় সেখান থেকে উপরের দিকে ইভেন্টটি ছড়িয়ে পড়াকেই Event Bubbling বলা হয়।
 
