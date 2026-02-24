@@ -161,7 +161,7 @@ mainContainer.addEventListener("click", function (event) {
       );
     }
 
-    card.querySelector(".status").innerText = "Interview"; //set this.innerText status in card
+    card.querySelector(".status").innerText = "✅ Interview"; //set this.innerText status in card
     card.querySelector(".status").className =
       "status px-3 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[10px] font-bold uppercase tracking-[2px] text-emerald-400";
 
@@ -192,7 +192,7 @@ mainContainer.addEventListener("click", function (event) {
       );
     }
 
-    card.querySelector(".status").innerText = "Rejected";
+    card.querySelector(".status").innerText = "❌ Rejected";
     card.querySelector(".status").className =
       "status px-3 py-2 rounded-full bg-rose-500/20 border border-rose-500/40 text-[10px] font-bold uppercase tracking-[2px] text-rose-400";
     calculateCount(); // count update
