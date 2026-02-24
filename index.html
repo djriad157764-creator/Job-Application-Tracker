@@ -40,7 +40,7 @@
         font-family: "Geist", sans-serif;
       }
       .active-btn {
-        padding: 12px 16px;
+        padding: 12px 32px;
         border-radius: 16px;
         backdrop-filter: blur(16px);
         background-color: rgba(37, 99, 235, 0.4);
@@ -51,7 +51,6 @@
           0 4px 6px -2px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(96, 165, 250, 0.5);
         cursor: pointer;
-        width: 100%;
         outline: none;
       }
 
@@ -67,7 +66,6 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(16px);
         transition: all 0.2s ease-in-out;
-        width: 100%;
         cursor: pointer;
       }
 
@@ -116,7 +114,7 @@
       <!-- btn div  -->
 
       <div class="md:flex md:justify-between items-center">
-        <div class="mb-10 pt-4 grid grid-cols-3 gap-2 md:gap-4 md:w-full px-3">
+        <div class="flex mb-10 gap-2 md:gap-4 md:w-full px-3">
           <button
             onclick="toggleStyle('all-filter-btn')"
             id="all-filter-btn"
@@ -129,7 +127,7 @@
             id="interview-filter-btn"
             class="px-4 hover:scale-102 scale-96 duration-300 cursor-pointer md:px-8 py-3 rounded-2xl backdrop-blur-lg bg-white/5 text-white/40 border border-white/10 hover:bg-white/10 font-bold"
           >
-           ✅ Interview
+            ✅ Interview
           </button>
           <button
             onclick="toggleStyle('rejected-filter-btn')"
@@ -171,7 +169,7 @@
           📭 No jobs available
         </h2>
         <p class="text-[#cbd5e1] text-base">
-        📪  Check back soon for new job opportunities
+          📪 Check back soon for new job opportunities
         </p>
       </div>
 
@@ -181,7 +179,7 @@
         <!-- card 1 TechCorp Solutions -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2   hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -198,7 +196,7 @@
               <button
                 class="card-delete-btn cursor-pointer text-[32px] hover:scale-120 duration-400 transition-all text-red-600"
               >
-                🗑️</i>
+                🗑️
               </button>
             </div>
           </div>
@@ -223,12 +221,12 @@
             <button
               class="interview-btn hover:scale-102 scale-96 duration-300 cursor-pointer px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold"
             >
-            ✅ Interview
+              ✅ Interview
             </button>
             <button
               class="rejected-btn hover:scale-102 scale-96 duration-300 cursor-pointer px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold"
             >
-             ❌ Rejected
+              ❌ Rejected
             </button>
           </div>
         </div>
@@ -236,7 +234,7 @@
         <!-- card 2 Innovatech  -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2  hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -263,10 +261,14 @@
             <span class="Salary">💰 $70k - $90k</span>
           </div>
           <div class="mb-5">
-            
-              <span class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40">📌 Not Applied</span>
-            
-            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
+            <span
+              class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40"
+              >📌 Not Applied</span
+            >
+
+            <p
+              class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]"
+            >
               "Design user-centered interfaces for mobile and web platforms."
             </p>
           </div>
@@ -287,7 +289,7 @@
         <!-- card 3  CloudShift Inc. -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2  hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -314,9 +316,14 @@
             <span class="Salary">💰 $95k - $120k</span>
           </div>
           <div class="mb-5">
-            <span class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40">📌 Not Applied</span>
+            <span
+              class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40"
+              >📌 Not Applied</span
+            >
 
-            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
+            <p
+              class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]"
+            >
               "Manage CI/CD pipelines, cloud infrastructure, and automation."
             </p>
           </div>
@@ -337,7 +344,7 @@
         <!-- card 4 FinEdge -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2  hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -364,8 +371,13 @@
             <span class="Salary">💰 $85k - $110k</span>
           </div>
           <div class="mb-5">
-            <span class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40">📌 Not Applied</span>
-            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
+            <span
+              class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40"
+              >📌 Not Applied</span
+            >
+            <p
+              class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]"
+            >
               "Develop scalable APIs and microservices with Node.js and Python."
             </p>
           </div>
@@ -386,7 +398,7 @@
         <!-- card 5 GreenLeaf Energy -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2  hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -413,8 +425,13 @@
             <span class="Salary">💰 $65k - $80k</span>
           </div>
           <div class="mb-5">
-            <span class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40">📌 Not Applied</span>
-            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
+            <span
+              class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40"
+              >📌 Not Applied</span
+            >
+            <p
+              class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]"
+            >
               "Analyze energy consumption data and create visual reports."
             </p>
           </div>
@@ -422,7 +439,7 @@
             <button
               class="interview-btn hover:scale-102 scale-96 duration-300 cursor-pointer px-8 py-3 rounded-2xl backdrop-blur-lg bg-green-500/30 text-green-400 border-green-500/50 hover:bg-green-300/30 transition-all font-bold"
             >
-             ✅ Interview
+              ✅ Interview
             </button>
             <button
               class="rejected-btn hover:scale-102 scale-96 duration-300 cursor-pointer px-8 py-3 rounded-2xl backdrop-blur-lg bg-red-500/30 text-red-300 border-red-500/50 hover:bg-red-600/30 transition-all font-bold"
@@ -435,7 +452,7 @@
         <!-- card 6 MediCore Health -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2  hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -462,8 +479,13 @@
             <span class="Salary">💰 $100k - $130k</span>
           </div>
           <div class="mb-5">
-            <span class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40">📌 Not Applied</span>
-            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
+            <span
+              class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40"
+              >📌 Not Applied</span
+            >
+            <p
+              class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]"
+            >
               "Lead product development for healthcare software solutions."
             </p>
           </div>
@@ -484,7 +506,7 @@
         <!-- card 7 SkillBridge Academy -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2  hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -511,8 +533,13 @@
             <span class="Salary">💰 $40k - $50k</span>
           </div>
           <div class="mb-5">
-             <span class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40">📌 Not Applied</span>
-            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
+            <span
+              class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40"
+              >📌 Not Applied</span
+            >
+            <p
+              class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]"
+            >
               "Create educational content and blog posts for online learners."
             </p>
           </div>
@@ -533,7 +560,7 @@
         <!-- card 8 Starlight Games -->
 
         <div
-          class="card backdrop-blur-3xl bg-white/2  hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
+          class="card backdrop-blur-3xl bg-white/2 hover:bg-white/1 transition-all duration-400 hover:border-l-2 hover:border-amber-300 p-6 rounded-2xl"
         >
           <div class="flex justify-between items-center">
             <div class="">
@@ -560,8 +587,13 @@
             <span class="Salary">💰 $45k - $55k</span>
           </div>
           <div class="mb-5">
-             <span class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40">📌 Not Applied</span>
-            <p class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]">
+            <span
+              class="status px-3 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[2px] text-white/40"
+              >📌 Not Applied</span
+            >
+            <p
+              class="description border-l-2 mt-5 border-white/10 pl-4 italic text-[#64748b]"
+            >
               "Test gameplay mechanics, report bugs, and ensure quality."
             </p>
           </div>
